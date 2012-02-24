@@ -17,12 +17,10 @@ def d(n):
 
 if __name__ == "__main__":
     n_to_sum = {}
+    amicable_sum = 0
     for i in xrange(1, 10000):
         n_to_sum[i] = d(i)
-    
-    amicable_sum = 0
-    for k,v in n_to_sum.iteritems():
-        if v in n_to_sum and n_to_sum[v] >= v:
-            amicable_sum += k + v
+        if n_to_sum[i] in n_to_sum and n_to_sum[n_to_sum[i]] == i and n_to_sum[i] != i:
+            amicable_sum += i + n_to_sum[i] 
 
     print "Sum: %d"%amicable_sum
